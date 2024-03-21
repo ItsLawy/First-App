@@ -33,8 +33,8 @@ this app was made in both Arabic and English language.
 hopefully this helps u out with anything ,wish me luck in my journey ! <3.
 
 
-![Analytic](https://github.com/ItsLawy/First-App/assets/149022910/f0c4ef51-a143-45d2-bd77-16281c61dd25)
+![Analytic](https://github.com/ItsLawy/First-App/assets/149022910/e67f99ce-7a7c-4521-9782-2edfc88fa9c8)
 
-![Dash](https://github.com/ItsLawy/First-App/assets/149022910/3023ae0c-d915-42c9-8dba-ff899e7b42da)
+![Customer](https://github.com/ItsLawy/First-App/assets/149022910/81360744-8136-46e1-b94f-5dea6843d36d)
 
-![Customer](https://github.com/ItsLawy/First-App/assets/149022910/e4cb391b-0835-485d-be25-97a016e5b8e7)
+![Dash](https://github.com/ItsLawy/First-App/assets/149022910/fcb2512e-934d-4c30-a274-40f713ad9937)
