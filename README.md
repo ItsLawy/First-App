@@ -17,6 +17,7 @@ many thanks.
 <li>React</li>
 <li>Prisma</li>
 <li>Tailwind</li>
+<li>Electron</li>
 <br>
 hopefully this helps u out with anything ,wish me luck in my journey ! <3.
 
