@@ -1,0 +1,913 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "rsuite/dist/rsuite.css";
+#root{ padding: 10px}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body {
+  @apply h-full select-none font-poppins font-medium bg-default w-[100%] m-0 p-0;
+  backface-visibility: hidden;
+}
+@layer components {
+  .primary-btn {
+    @apply py-[1.6vh] px-[3vw] w-[11vw] min-w-[11vw] hover:bg-btnprimary m-auto rounded-2xl transition duration-150 bg-[length:32px_32px] bg-no-repeat  bg-[0.7vw_1.2vh] flex;
+  }     
+  .primary-btn label{       
+    @apply text-primary relative text-[16px] top-[0.3vh] cursor-pointer;
+  } 
+  .Stats{
+    @apply bg-default rounded-2xl h-[15.7vh] w-[20.4vw] shadow-[2px_4px_4px_#68B6FF0D] relative animate-[300ms_pulse_forwards];
+  }
+.animate-me{
+ @apply animate-[300ms_pulse_forwards];
+}
+  .Stat-Pic{
+    @apply w-[5.5vw] h-[5.5vw] m-auto rounded-xl absolute top-[2.4vh] left-[1.2vw] bg-[length:60px_60px] bg-no-repeat bg-center;  
+  }
+  .label-top{
+    @apply relative h-[4.47vh] w-[fit] text-[3.7vh] text-fonts flex m-auto;
+  } 
+  .label-top{
+    transition : all 0.3s;
+  }
+  .label-bottom{
+    @apply absolute left-[8.8vw] top-[10vh] h-[3vh] w-[11vw] text-[16px] text-[#B8B7BC];
+  } 
+
+  .Label-Holder{
+    @apply  w-[46vw] h-[4vh] absolute top-[2vh] left-[1vw] flex;
+  }
+
+  .Label-Holder label{
+    @apply w-[6vw] h-[3vh] text-fonts text-lg text-center m-auto font-semibold text-[15px];
+  }
+  .Customer-Dash label{
+    @apply w-[9vw] h-[3vh] text-fonts text-lg text-center m-auto font-semibold text-[15px];
+  }
+  .Customer-Label label{
+    @apply w-[6vw] h-[3vh] text-fonts text-lg text-center m-auto font-medium text-[14px];
+
+  }   
+  .Data-Holder{
+    @apply  w-[46vw] min-h-[5vh] relative left-[0vw] flex  hover:bg-[#faf9f9] transition duration-150;
+  } 
+  .Data-Holder label{
+    @apply w-[6vw] h-[3vh] text-fonts text-lg text-center m-auto font-medium text-[14px] whitespace-nowrap;
+  }
+
+  .Data-Holder-CustomerCard label{
+    @apply min-w-[9vw] h-[3vh] text-fonts text-lg text-center m-auto font-medium text-[14px] whitespace-nowrap;
+  }
+  .Data-Holder-CustomerCard-Label-Order{
+    min-width: 2.5vw !important;
+  }
+  .Data-Holder-CustomerCard-Label-Total{
+    min-width: 4vw !important;
+  }
+
+
+  .DataCarrier::-webkit-scrollbar {
+    width: 8px;
+    position: absolute; 
+}
+
+.DataCarrier::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+.DataCarrier::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #464554;
+}
+
+
+
+.Stat-label{
+  @apply w-[8vw] h-[3vh] text-fonts text-lg text-center m-auto font-medium text-[120px]; 
+}
+
+.List-1{
+  @apply w-[5vw] h-[10.9vh] bg-default absolute top-[3vh] z-[60] right-[1vw] shadow-[2px_4px_6px_1px_#4E87A817] rounded-[3px] flex flex-col ;
+
+}
+.List-2{
+  @apply w-[4.4vw] h-[10vh] bg-default absolute right-[6vw] z-[60] shadow-[2px_4px_6px_1px_#4E87A817] rounded-[3px] flex flex-col;
+
+}
+
+.List-1 li {
+  @apply m-auto  h-[3vh] w-[4.5vw] rounded-sm hover:bg-[#F2F2F2] ml-auto  transition duration-150 text-secondary bg-[length:20px_20px] bg-no-repeat bg-left;
+}
+.List-1 li span{
+  @apply relative left-[1.2vw] flex h-[1vh] w-[1vw];
+}
+.List-2 li {
+  @apply m-auto  h-[3vh] w-[4vw] rounded-sm hover:bg-[#F2F2F2] transition duration-150 text-[13px] text-secondary;
+}
+
+.fade-in {
+ animation : fadeIn 0.2s forwards;
+}
+
+.fade-out {
+  animation : fadeOut 0.2s forwards;
+} 
+
+.button {
+  padding: 1.6vh 2.7vw;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  @apply text-form;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #68B6FF;
+  transition:700ms;
+}
+
+.button:hover {
+  @apply text-default;
+  transform: scale(1.06);
+  outline: 2px solid #53A9F9;
+  box-shadow: 4px 5px 17px -4px #53A9F9;
+  transition:700ms;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  @apply bg-form;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: 700ms;
+}
+
+.button:hover::before {
+  width: 250%;
+}
+.button:active {
+  transform: translateY(4px) scale(1.05);
+
+}
+
+
+form input[type="text"] {
+  @apply w-[14.1vw] h-[3.5vh] m-auto text-secondary focus:outline-none;
+
+}
+form input[type="text"]:focus + h1 {
+  @apply bg-form;
+}
+
+form input[type="date"] {
+  @apply w-[14.1vw] h-[3.5vh] m-auto text-secondary focus:outline-none;
+  
+}
+
+form input[type="number"] {
+  @apply w-[14.1vw] h-[3.5vh] m-auto text-secondary focus:outline-none;
+  
+}
+
+form input:focus + h1 {
+  @apply bg-form;
+}
+
+div:focus + h1 {
+  @apply bg-form;
+}
+.company-form input:focus +h1{
+  @apply bg-companyForm;
+}
+.CompanyForm input:focus + h1{
+  @apply bg-companyForm !important;
+}
+
+.company-form input[type="text"]:focus +h1 {
+   @apply bg-companyForm;
+
+}
+.company-form input[type="number"]:focus + h1 {
+  @apply bg-companyForm;
+}
+
+
+
+.form-div h1{
+  @apply bg-[#E3E3E3] w-[100%] h-[0.2vh] relative top-[-1vh] transition ;
+} 
+.form-div label{
+
+  @apply text-form relative top-[1vh];
+}
+
+
+.form-company h1{
+  @apply bg-[#E3E3E3] w-[100%] h-[0.2vh] relative top-[-1vh] transition ;
+} 
+.form-company label{
+
+  @apply text-companyForm relative top-[1vh];
+}
+
+.unit {
+  @apply w-[9.8vw] h-[3.5vh] text-secondary right-[2.2vw] relative !important;
+
+} 
+.unit-h1{
+  @apply bg-[#E3E3E3] w-[9.8vw] h-[0.2vh] relative top-[-1vh] transition  !important; 
+}
+.unit-h2{
+  @apply   bg-[#E3E3E3] w-[9.8vw] h-[0.2vh] relative top-[-1vh] transition  !important; 
+}
+.unit:focus + .unit-h1 {
+  @apply bg-form !important;
+}
+.unit:focus + .unit-h2 {
+  @apply bg-companyForm !important;
+}
+
+
+.unit-type-h1{
+  @apply bg-[#E3E3E3] w-[3.2vw] h-[0.2vh] relative top-[-2vh] transition  !important; 
+}
+.unit-type{
+  @apply w-[3.2vw] h-[3.5vh] text-secondary top-[-2.2vh]  relative focus:outline-none !important;
+}
+.unit-type:focus + .unit-type-h1 {
+  @apply bg-form !important;
+}
+
+.unit-type-h2{
+  @apply bg-[#E3E3E3] w-[3.2vw] h-[0.2vh] relative top-[-2vh] transition  !important; 
+}
+.unit-type-1:focus + .unit-type-h2 {
+  @apply bg-companyForm !important;
+}
+
+.unit-type-1{
+  @apply w-[3.2vw] h-[3.5vh] text-secondary top-[-2.2vh]  relative focus:outline-none !important;
+}
+.unit-type-1:focus + .unit-type-h1 {
+  @apply bg-form !important;
+}
+
+.decimal{
+  @apply text-[16px];
+}
+
+.total{
+  @apply text-form !important;
+}
+
+.custom-autocomplete {
+  @apply w-[14.1vw] h-[3.5vh] z-30;
+}
+
+
+.Auto-Complete-Change b{
+  @apply text-form;
+}
+
+.Wrapper::-webkit-scrollbar {
+  left: 2vw;
+  width: 8px;
+  position: absolute;
+}
+
+.Wrapper::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.Wrapper::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #464554;
+}
+
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+
+label {
+  transition: all 0.3s; /* Apply transition to color property */
+}
+
+p {
+  @apply relative max-w-fit max-h-[0] m-0 p-0 top-[-2vh];
+} 
+a:link {
+  text-decoration: none;
+}
+[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  background-image: url('../public/Cancel.svg');
+  background-size: 18px 18px;
+}
+
+.dropDown:focus{
+  border-color:#49A7FF;
+  outline: none;
+}
+.dropDown:hover:not(:focus) {
+  border-color: #BFE0FF; /* Change the border color on hover, but not when focused */
+}
+.topLabels label{
+  @apply  h-[3vh] w-[8vw] text-fonts text-lg text-center m-auto font-semibold text-[16px] ;
+}
+.dataLabels label{
+  @apply h-[3vh] w-[8vw] text-fonts text-lg text-center m-auto font-medium text-[15px]  ;
+}
+
+.topLabels-o label{
+  @apply  h-[3vh] text-fonts text-lg text-center m-auto font-semibold text-[16px] ;
+}
+.dataLabels-o label{
+  @apply h-[3vh] text-fonts text-lg text-center m-auto font-medium text-[15px] ;
+}
+.dataLabels{
+  backface-visibility: hidden;  
+}
+
+.ul-list-1{
+  @apply w-[8.7vw] h-[22vh] bg-default rounded-[12px]  border-2 border-[#EAEAEA] z-10 absolute top-[5.4vh] left-[0.6vw] flex flex-col;
+}
+.ul-list-1 li{ 
+  @apply w-[8vw] h-[3vh] bg-default text-[14px] text-secondary m-auto hover:bg-[#F2F2F2] transition duration-150 flex items-center justify-center rounded-sm font-semibold;
+}
+
+.ul-list-2{
+  @apply w-[8.7vw] h-[16vh] bg-default rounded-[12px] border-2 border-[#EAEAEA] z-10 absolute top-[5.4vh] left-[10.6vw] flex flex-col;
+}
+.ul-list-2 li{ 
+  @apply w-[8vw] h-[3vh] text-[14px] text-secondary m-auto hover:bg-[#F2F2F2] transition duration-150 flex items-center justify-center rounded-sm font-semibold;
+}
+
+
+.ul-list-3{
+  @apply w-[8.7vw] h-[16vh] bg-default rounded-[12px] border-2 border-[#EAEAEA] z-10 absolute top-[5.4vh] left-[20.5vw] flex flex-col;
+}
+.ul-list-3 li{ 
+  @apply w-[8vw] h-[3vh] text-[14px] text-secondary m-auto hover:bg-[#F2F2F2] transition duration-150 flex items-center justify-center rounded-sm font-semibold;
+}
+
+.ul-list-4{
+  @apply w-[8.7vw] h-[16vh] bg-default rounded-[12px] border-2 border-[#EAEAEA] z-10 absolute top-[5.4vh]  flex flex-col;
+}
+.ul-list-4 li{ 
+  @apply w-[8vw] h-[3vh] text-[14px] text-secondary m-auto hover:bg-[#F2F2F2] transition duration-150 flex items-center justify-center rounded-sm font-semibold;
+}
+
+.ul-list-5{
+  @apply w-[5.7vw] h-[16vh] bg-default rounded-[12px] border-2 border-[#EAEAEA] z-10 absolute top-[3vh]  flex flex-col;
+}
+.ul-list-5 li{ 
+  @apply w-[5vw] h-[3vh] text-[14px] text-secondary m-auto hover:bg-[#F2F2F2] transition duration-150 flex items-center justify-center rounded-sm font-semibold;
+}
+.customers-list li{
+  @apply w-[8vw] h-[3vh] text-[14px] text-secondary m-auto hover:bg-[#F2F2F2] transition duration-150 flex items-center justify-center rounded-sm font-semibold;
+
+}
+
+.Background::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+}
+
+.Background::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.Background::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #464554;
+}
+.Stat-Order{
+  @apply animate-[300ms_pulse_forwards];
+}
+.Order-Table{
+  backface-visibility: hidden;  
+  transform: translateZ(0); 
+}
+
+.data-holder::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+}
+
+.data-holder::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.data-holder::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #464554;
+}
+.Profile-Buttons{
+  @apply relative bg-slate-300 w-[8.1vw] h-[4.5vh] rounded-[12px] text-[14px] text-secondary flex items-center justify-center;
+}
+
+.CustomerDataCarrier::-webkit-scrollbar {
+  left: 2vw;
+  width: 8px;
+  position: absolute;
+}
+
+.CustomerDataCarrier::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.CustomerDataCarrier::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #464554;
+}
+.CustomerForm-h1{ 
+  @apply  w-[14.1vw] h-[0.2vh] relative top-[-1vh] transition  !important; 
+}
+
+.CompanyForm-h1{ 
+  @apply  w-[14.1vw] h-[0.2vh] relative top-[-2.8vh] transition  !important; 
+}
+.Back-Button{
+  @apply bg-[length:35px_35px] h-[100%] px-6 bg-no-repeat border-2 border-[#F4F4F5] rounded-xl bg-center transition-all duration-[300ms] ml-auto;
+}
+.Back-Button:hover{ 
+  @apply bg-[#464554] ;
+  background-image: url('../public/Back-White.svg') !important;
+}
+.Back-Button:active{
+  transform: translateY(3px)!important;
+}
+.Add-Button{  
+  @apply bg-[length:40px_40px] h-[100%] w-[8.91vw] bg-no-repeat border-2 border-[#F4F4F5] rounded-xl transition-all duration-[300ms] mr-auto bg-left text-lg text-center;
+  background-image: url('../public/Add.svg');
+  text-indent : 1.3vw;
+} 
+.Add-Button:hover{ 
+  @apply bg-[#464554] ;
+  background-image: url('../public/Add-White.svg') !important;
+  color: #FFFFFF;
+  
+} 
+.Add-Button:active{
+  transform: translateY(3px)!important;
+}
+
+.Add-Customer{
+  @apply bg-[length:40px_40px] h-[5vh] w-[12vw] bg-no-repeat border-2 border-[#F4F4F5] rounded-xl transition-all duration-[300ms] mr-auto bg-left text-lg text-center;
+  background-image: url('../public/Add.svg');
+  text-indent : 1.3vw;
+}
+.Add-Customer:hover{ 
+  @apply bg-[#464554] ;
+  background-image: url('../public/Add-White.svg') !important;
+  color: #FFFFFF;
+  
+}
+.Add-Customer:active{
+  transform: translateY(3px)!important;
+}
+
+.Add-Order{
+  @apply bg-[length:40px_40px] h-[5vh] w-[12vw] text-[#49A7FF] bg-no-repeat border-2 border-[#F4F4F5] rounded-xl transition-all duration-[300ms] mr-auto bg-left text-lg text-center;
+  background-image: url('../public//Add-Blue.svg');
+  text-indent : 1.3vw;
+}
+.Add-Order:hover{ 
+  @apply bg-[#49A7FF] ;
+  background-image: url('../public/Add-White.svg') !important;
+  color: #FFFFFF;
+  
+}
+.Add-Order:active{
+  transform: translateY(3px)!important;
+}
+
+.Add-Store{
+  @apply bg-[length:40px_40px] h-[5vh] w-[12vw] text-[#61AC68] bg-no-repeat border-2 border-[#F4F4F5] rounded-xl transition-all duration-[300ms] mr-auto bg-left text-lg text-center;
+  background-image: url('../public//Add-Green.svg');
+  text-indent : 1.3vw;
+}
+.Add-Store:hover{ 
+  @apply bg-[#61AC68] ;
+  background-image: url('../public/Add-White.svg') !important;
+  color: #FFFFFF;
+
+}
+.Add-Store:active{
+  transform: translateY(3px)!important;
+}
+.Customer-Card-Label-1{
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  width: 12vw !important;
+  color: #464554 !important;
+}
+.Customer-Card-Label-2{
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  width: 12vw !important;
+  color: #B8B7BC !important;
+}
+.Analytic-Amounts label{
+  @apply w-[2.2vw] h-[3.2vh] text-[#727272] flex justify-center items-center;
+}
+
+.dashed-line{
+  border-style: dashed;
+  border-width: 1px; 
+  border-color: #F1F1F1; 
+  
+}
+.Month-Analytic label{
+  @apply w-[5.6vw] h-[3.2vh] text-[#727272] flex justify-center items-center mr-auto;
+
+}
+
+
+.ScrollTable::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+}
+
+.ScrollTable::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+.ScrollTable::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #464554;
+}
+
+.Back-Store{
+  @apply bg-[length:35px_35px] h-[100%] px-6 bg-no-repeat border-2 border-[#F4F4F5] rounded-xl bg-center transition-all duration-[300ms] ml-auto;
+}
+.Back-Store:hover{ 
+  @apply bg-[#61AC68] ;
+  background-image: url('../public/Back-White.svg') !important;
+}
+.Back-Store:active{
+  transform: translateY(3px)!important;
+}
+
+.Add-Order-Store{  
+  @apply bg-[length:40px_40px] h-[100%] w-[8.91vw] text-[#61AC68] bg-no-repeat border-2 border-[#F4F4F5] rounded-xl transition-all duration-[300ms] mr-auto bg-left text-lg text-center;
+  background-image: url('../public/Add-Green.svg');
+  text-indent : 1.3vw;
+} 
+.Add-Order-Store:hover{ 
+  @apply bg-[#61AC68] ;
+  background-image: url('../public/Add-White.svg') !important;
+  color: #FFFFFF;
+  
+} 
+.Add-Order-Store:active{
+  transform: translateY(3px)!important;
+}
+
+.CompanyFormLabels{
+  @apply text-companyForm !important;
+}
+
+  @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    .checkbox-wrapper-13 input[type=checkbox] {
+      --active: #275EFE;
+      --active-inner: #fff;
+      --focus: 2px rgba(39, 94, 254, .3);
+      --border: #BBC1E1;
+      --border-hover: #275EFE;
+      --background: #fff;
+      --disabled: #F6F8FF;
+      --disabled-inner: #E1E6F9;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      height: 21px;
+      outline: none;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin: 0;
+      top: 2px;
+      cursor: pointer;
+      border: 1px solid var(--bc, var(--border));
+      background: var(--b, var(--background));
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+    }
+
+    .checkbox-wrapper-13 input[type=checkbox]:after {
+      content: "";
+      display: block;
+      left: 0;
+      top: 0;
+      position: relative;
+      transition: transform var(--d-t, 0.2s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:checked {
+      --b: var(--active);
+      --bc: var(--active);
+      --d-o: .1s;
+      --d-t: .1s;
+      --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:disabled {
+      --b: var(--disabled);
+      cursor: not-allowed;
+      opacity: 0.9;
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:disabled:checked {
+      --b: var(--disabled-inner);
+      --bc: var(--border);
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:disabled + label {
+      cursor: not-allowed;
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:hover:not(:checked):not(:disabled) {
+      --bc: var(--border-hover);
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:focus {
+      box-shadow: 0 0 0 var(--focus);
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
+      width: 21px;
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
+      opacity: var(--o, 0);
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
+      --o: 1;
+    }
+    .checkbox-wrapper-13 input[type=checkbox] + label {
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    .checkbox-wrapper-13 input[type=checkbox]:not(.switch) {
+      border-radius: 7px;
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:not(.switch):after {
+      width: 5px;
+      height: 9px;
+      border: 2px solid var(--active-inner);
+      border-top: 0;
+      border-left: 0;
+      left: 7px;
+      top: 4px;
+      transform: rotate(var(--r, 20deg));
+    }
+    .checkbox-wrapper-13 input[type=checkbox]:not(.switch):checked {
+      --r: 43deg;
+    }
+  }
+
+  .checkbox-wrapper-13 * {
+    box-sizing: inherit;
+  }
+  .checkbox-wrapper-13 *:before,
+  .checkbox-wrapper-13 *:after {
+    box-sizing: inherit;
+  }
+.li-rem{
+  @apply text-[#fc7f67] !important;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 99px;
+  @apply  relative; 
+}
+
+.tabs-edit{
+  @apply w-[14vw] relative; 
+}
+
+.tabs * {
+  z-index: 2;
+}
+
+.container input[type="radio"] {
+  @apply hidden;
+}
+
+.tab {
+  @apply relative flex justify-center items-center;
+  height: 3vh;
+  width: 4vw;
+  top: 0 !important;
+  font-size: .8rem;
+  color: black;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: .8rem;
+  height: .8rem;
+  position: absolute;
+  top: 10px;
+  left: 30%;
+  font-size: 10px;
+  margin-left: 0.75rem;
+  border-radius: 50%;
+  margin: 0px;
+  background-color: transparent;
+  transition: 0.15s ease-in;
+}
+.hide{
+  display: none;
+
+}
+
+.glider {
+  position: absolute;
+  display: flex;
+  height: 30px;
+  width: 4.2vw;
+  background-color: #e6eef9;
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+
+
+.img-1{
+  background-image: url('../public/Home.svg');
+}
+.img-2{
+  background-image: url('../public/Orders.svg');
+}
+.img-3{
+  background-image: url('../public/Group.svg');
+}
+.img-4{
+  background-image: url('../public/shop-repo.svg');
+}
+.img-5{
+  background-image: url('../public/Check.svg');
+}
+.img-6{
+  background-image: url('../public/TimeLeft.svg');
+}
+.img-7{
+  background-image: url('../public/Multiply.svg');
+}
+.img-8{
+  background-image: url('../public/BoxOrder.svg');
+}
+.img-9{
+  background-image: url('../public/Dollar.svg');
+}
+.img-10{
+  background-image: url('../public/Com.svg');
+}
+.img-11{
+  background-image: url('../public/Customers.svg');
+}
+.img-12{
+  background-image: url('../public/Setting.svg');
+}
+.img-13{
+  background-image: url('../public/Arrow-btn.svg');
+}
+.img-14{
+  background-image: url('../public/Money.svg');
+}
+.img-15{
+  background-image: url('../public/Back.svg');
+}
+.img-16{
+  background-image: url('../public/Back-Green.svg');
+}
+.img-17{
+  background-image: url('../public/Comment.svg');
+}
+.img-19{
+  background-image: url('../public/mini-arrow.svg');
+}
+.img-20{
+  background-image: url('../public/edit-pen.svg');
+}
+.img-21{
+  background-image: url('../public/trash-bin.svg');
+}
+@keyframes l15-1 {
+ 0%,100% {background-size:20% 100%}
+ 33%,66% {background-size:20% 40%}
+}
+@keyframes l15-2 {
+ 0%,33%   {background-position: 0    0,50% 100%,100% 100%}
+ 66%,100% {background-position: 100% 0,0   100%,50%  100%}
+}
+@keyframes slideUp{
+  0%{
+    opacity: 0.5;
+    transform: translateY(10%);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    } 
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    } 
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @keyframes fadeInTable {
+    0% {
+      opacity: 0;
+    } 
+    100% {
+      opacity: 0.95;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+    }
+    70% {
+      transform: scale(1);
+      
+    }
+    100% {
+      transform: scale(0.98);
+    }
+  }
+
+  @keyframes PopIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes PopOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+  }
+} 
