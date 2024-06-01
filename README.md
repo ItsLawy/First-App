@@ -17,8 +17,7 @@ many thanks.
 <li>React</li>
 <li>Prisma</li>
 <li>Tailwind</li>
-
-
+<br>
 hopefully this helps u out with anything ,wish me luck in my journey ! <3.
 
 <h2>Analytic View</h2>
