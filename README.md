@@ -1,6 +1,6 @@
 # First-App
 
-<h1>Hello!</h1>, this's the very first app i make in my journey to learn react ,
+Hello!, this's the very first app i make in my journey to learn react ,
 and building an electron app was the best choice for me, since i have always wanted
 to build an electron app.
 
